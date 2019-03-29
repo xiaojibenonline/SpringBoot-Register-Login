@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/lbody.css">
+</head>
+<body>
+	<div class="content">
+        <p class="p1">请登录</p><p class="p2"><a href="register.html">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;立即注册&gt;</a></p>
+        <form class="user-form" action="doLogin" method="post">
+            <ul style="list-style:none">
+            <li>用户名：<input class="username" name="username" type="text" placeholder="请输入用户名" autocomplete="off"></li>
+            <li>密&emsp;码：<input class="pwd" name="pwd" type="password" placeholder="请输入密码" autocomplete="off"></li>
+            <li>
+                <input class="btn1" type="submit" value="提交">
+				<input class="btn2" type="reset" value="重置">
+            </li>
+        </ul>
+        </form>
+	</div>
+	<input id="msg" type="hidden" th:value="${param.msg}">
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+    $(function () {
+    	var msg = $("#msg").eq(0).val();
+    	if(msg != ""){
+    		alert(msg);
+    	}
+		$(".user-form").validate({
+			rules: {
+			    username: {
+			        required: true,
+					maxlength: 16
+				},
+				pwd: {
+			        required: true,
+					rangelength: [6, 16]
+				}
+			},
+			messages: {
+			    username: {
+			        required: "该项为必填项！",
+					maxlength: "用户名不得大于16位"
+				},
+				pwd: {
+			        required: "该项为必填项！",
+					rangelength: "密码长度在6-16位"
+				}
+			}
+		})
+    })
+    </script>
+</body>
+</html>

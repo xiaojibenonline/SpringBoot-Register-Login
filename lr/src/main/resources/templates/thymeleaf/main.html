@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <!--重置浏览器样式-->
+    <link rel="stylesheet" href="css/reset.css">
+    <!--阿里图标库-->
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_994322_8ntqc59rlf2.css">
+    <!--头部尾部样式-->
+    <link rel="stylesheet" href="css/common.css">
+    <!--主体样式-->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!--头部-->
+    <div class="header_box">
+        <div class="header">
+            <div class="logo">
+                <svg class="icon python_logo" aria-hidden="true">
+                    <use xlink:href="#icon-python"></use>
+                </svg>
+            </div>
+            <div class="all_page">
+                <ul>
+                    <li class="active">首页</li>
+                    <li>公开文档</li>
+                    <li>作者文档</li>
+                    <li>其他</li>
+                </ul>
+            </div>
+            <div class="login">
+                <div class="lo_re">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-denglu"></use>
+                    </svg>
+                    &nbsp;<a href="#">欢迎用户<span th:text="${session.user}"></span></a>&emsp;<a href="/logout">退出</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--内容-->
+    <div class="content">
+        <div class="main_content">
+            <!--左边-->
+            <div class="left_content">
+                <!--轮播图-->
+                <div class="turn">
+                    <ul class="pic">
+                        <li><a href="#"><img src="../img/康纳酱.png" alt=""></a></li>
+                        <li><a href="#"><img src="../img/佐贺偶像.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="../img/骨王.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="../img/萌王.jpg" alt=""></a></li>
+                    </ul>
+                    <ul class="choice">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class="btn">
+                        <li class="left">&lt;</li>
+                        <li class="right">&gt;</li>
+                    </ul>
+                </div>
+                <!--放大图-->
+                <div class="subs">
+                    <div class="sub">
+                        <a href="#"><img src="../img/desert.jpg" alt=""></a>
+                        <p><a href="#">desert</a></p>
+                    </div>
+                    <div class="sub">
+                        <a href="#"><img src="../img/butterfly.jpg" alt=""></a>
+                        <p><a href="#">butterfly</a></p>
+                    </div>
+                    <div class="sub">
+                        <a href="#"><img src="../img/flowers.jpg" alt=""></a>
+                        <p><a href="#">flowers</a></p>
+                    </div>
+                </div>
+                <!--可切换的内容-->
+                <div class="new_subs">
+                    <ul class="new_catalog">
+                        <li>9月新番</li>
+                        <li>10月新番</li>
+                        <li>11月新番</li>
+                        <li>12月新番</li>
+                    </ul>
+                    <!--加载更多，暂不写-->
+                    <div class="more">
+                        <div class="more_box">
+                            <span><a href="#">加载更多</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--右边-->
+            <div class="right_content">
+                <div class="news">
+                    <div class="news_title">
+                        <a href="#"><span>更多资讯&gt;</span></a>
+                    </div>
+                    <div class="news_content">
+                        <br><br>
+                        <p><a href="#"><span>文章一</span></a></p>
+                        <p><a href="#"><span>文章二</span></a></p>
+                        <p><a href="#"><span>文章三</span></a></p>
+                        <p><a href="#"><span>文章四</span></a></p>
+                        <p><a href="#"><span>文章五</span></a></p>
+                        <p><a href="#"><span>文章六</span></a></p>
+                        <p><a href="#"><span>文章七</span></a></p>
+                        <p><a href="#"><span>文章八</span></a></p>
+                    </div>
+                </div>
+                <div class="links"></div>
+                <div class="contact_me">
+                    <div class="ways">
+                        <div class="way">
+                            <br><br>&nbsp;<span class="iconfont icon-qq"></span><span>&emsp;<a href="#">285037705</a></span>
+                        </div>
+                        <div class="way">
+                            <br><br>&nbsp;<span class="iconfont icon-weixin"></span><span>&emsp;<a href="#">lx285037705</a></span>
+                        </div>
+                        <div class="way">
+                            <br><br>&nbsp;<span class="iconfont icon-weibo"></span><span>&emsp;<a href="https://weibo.com/6822862023/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank">霄基苯_</a></span>
+                        </div>
+                        <div class="way">
+                            <br><br>&nbsp;<span class="iconfont icon-weibiaoti-"></span><span>&emsp;<a href="https://www.jianshu.com/u/2ff7de7dc6b6" target="_blank">霄基苯</a></span>
+                        </div>
+                    </div>
+                    <div class="two_code">
+                        <a href="#"><img src="../img/two_code.jpg" alt=""></a>
+                        <a href="#"><span>关注我</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--尾部-->
+    <div class="footer">
+        <div class="others"></div>
+        <div class="copyright">
+            Copyright&copy;2019李霄&emsp;版权所有&emsp;备案号：暂无
+        </div>
+    </div>
+    <!--阿里图标库svg格式-->
+    <script type="text/javascript" src="https://at.alicdn.com/t/font_994322_8ntqc59rlf2.js"></script>
+    <!--jquery-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!--主体js-->
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

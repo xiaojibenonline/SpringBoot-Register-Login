@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<link rel="stylesheet" href="css/rbody.css">
+</head>
+<body>
+	<div class="content">
+		<p class="p1">请注册</p><p class="p2"><a href="login.html">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;立即登录&gt;</a></p>
+		<form class="user-form" action="/doRegister" enctype="multipart/form-data" method="post">
+			<ul style="list-style:none">
+				<!--autocomplete="off"清除浏览器默认填写-->
+				<li>用户名&emsp;：<input class="username" type="text" name="username" placeholder="请输入用户名" autocomplete="off"></li>
+				<li>邮&emsp;箱&emsp;：<input class="email" type="text" name="email" placeholder="请输入邮箱" autocomplete="off"></li>
+				<li>手机号&emsp;：<input class="phone" type="text" name="phone" placeholder="请输入手机号" autocomplete="off"></li>
+				<li>密&emsp;码&emsp;：<input class="pwd1" type="password" name="pwd1" placeholder="请输入6-16位数的密码"></li>
+				<li>确认密码：<input class="pwd" type="password" name="pwd" placeholder="请确认密码"></li>
+				<!--<li>用户头像：<input class="photo" type="file" name="photo" accept="image/jpeg image/png"></li>-->
+				<li>用户头像：<input class="photo" type="text" name="photo"placeholder="暂时就一个头像url"></li>
+				<li>
+					性&emsp;别&emsp;：<select class="gender" name="gender">
+						<option value="男">男</option>
+						<option value="女">女</option>
+					</select>
+					年龄：<input class="age" type="text" name="age" autocomplete="off">
+				</li>
+				<li>
+					籍&emsp;贯&emsp;：<select class="nativeplace" name="nativeplace">
+						<option value="河北省">河北省</option>
+						<option value="山西省">山西省</option>
+						<option value="辽宁省">辽宁省</option>
+						<option value="吉林省">吉林省</option>
+						<option value="黑龙江省">黑龙江省</option>
+						<option value="江苏省">江苏省</option>
+						<option value="浙江省">浙江省</option>
+						<option value="安徽省">安徽省</option>
+						<option value="福建省">福建省</option>
+						<option value="江西省">江西省</option>
+						<option value="山东省">山东省</option>
+						<option value="河南省">河南省</option>
+						<option value="湖北省">湖北省</option>
+						<option value="湖南省">湖南省</option>
+						<option value="广东省">广东省</option>
+						<option value="陕西省">陕西省</option>
+						<option value="四川省">四川省</option>
+						<option value="台湾省">台湾省</option>
+						<option value="云南省">云南省</option>
+						<option value="青海省">青海省</option>
+						<option value="甘肃省">甘肃省</option>
+						<option value="海南省">海南省</option>
+						<option value="贵州省">贵州省</option>
+						<option value="北京市">北京市</option>
+						<option value="天津市">天津市</option>
+						<option value="上海市">上海市</option>
+						<option value="重庆市">重庆市</option>
+						<option value="新疆维吾尔族自治区">新疆维吾尔族自治区</option>
+						<option value="广西壮族自治区">广西壮族自治区</option>
+						<option value="宁夏回族自治区">宁夏回族自治区</option>
+						<option value="内蒙古自治区">内蒙古自治区</option>
+						<option value="西藏自治区">西藏自治区</option>
+					</select>
+				</li>
+				<li>
+					<input class="btn1" type="submit" value="提交">
+					<input class="btn2" type="reset" value="重置">
+				</li>
+			</ul>
+		</form>
+    </div>
+    <input id="msg" type="hidden" th:value="${param.msg}">
+    <script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+	    var msg = $("#msg").eq(0).val();
+		if(msg != ""){
+			alert(msg);
+		}
+		$(function () {
+			$(".user-form").validate({
+				rules: {
+				    username: {
+				        required: true,
+						maxlength: 16
+					},
+					email: {
+				        required: true,
+						email: true
+					},
+					phone: {
+				        required: true,
+						rangelength: [11, 11]
+					},
+					pwd1: {
+				        required: true,
+						rangelength: [6, 16]
+					},
+					pwd: {
+				        required: true,
+				        equalTo: ".pwd1"
+					},
+					photo: {
+				        required: true
+					},
+					age: {
+				        required: true,
+						range: [0, 150]
+					}
+				},
+				messages: {
+				    username: {
+				        required: "该项为必填项！",
+						maxlength: "用户名不得大于16位"
+					},
+					email: {
+				        required: "该项为必填项！",
+						email: "请输入正确的邮箱！"
+					},
+					phone: {
+				        required: "该项为必填项！",
+						rangelength: "请输入正确的手机号！"
+					},
+					pwd1: {
+				        required: "该项为必填项！",
+						rangelength: "密码长度在6-16位"
+					},
+					pwd: {
+				        required: "该项为必填项！",
+				        equalTo: "密码不一致！"
+					},
+					photo: {
+				        required: "该项为必填项！"
+					},
+					age: {
+				        required: "该项为必填项！",
+						range: "拒绝接受异常年龄！"
+					}
+				}
+			})
+        })
+    </script>
+</body>
+</html>

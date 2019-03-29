@@ -1,0 +1,47 @@
+.content{
+    margin: auto;
+    width: 400px;
+    height: 500px;
+    background-color: skyblue;
+    border-radius: 8px;
+}
+a {
+    text-decoration: none;
+}
+.p1 {
+    line-height: 10px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 60px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid purple;
+}
+.p2 {
+    line-height: 10px;
+    display: inline-block;
+    padding-bottom: 17px;
+    border-bottom: 1px solid gray;
+}
+input{
+    width: 260px;
+    font-size: 16px;
+    line-height: 25px;
+    border-radius: 3px;
+}
+.btn1{
+    width: 60px;
+    margin-left: 80px;
+}
+.btn2{
+    width: 60px;
+    margin-left: 80px;
+}
+li{
+    line-height: 45px;
+}
+select {
+    height: 25px;
+}
+.age{
+	width: 170px;
+}
